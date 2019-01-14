@@ -1,2 +1,12 @@
+body {
+  font-family: sans-serif; }
+
+header {
+  display: flex; }
+
+nav a {
+  font-size: 14px;
+  text-transform: uppercase; }
+
 .current {
   color: red; }
