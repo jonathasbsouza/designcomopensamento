@@ -1,6 +1,9 @@
 body {
   font-family: sans-serif; }
 
+.cta {
+  font-family: 'IBM Plex Mono', monospace; }
+
 header {
   padding: 15px 0px; }
   header .container {
@@ -20,19 +23,26 @@ nav .current {
 #slider .slider {
   width: 100%;
   margin-top: 20vh;
+  margin-bottom: 15px;
   height: 60vh;
   background-color: #222; }
 #slider .cta {
-  display: block;
-  padding: 18px 36px;
-  font-size: 14px;
-  background-color: gray;
-  border: 0;
-  border-radius: 4px;
-  margin: -30px 0 0 10px; }
+  display: inline-block;
+  color: #585858;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+  background-color: transparent;
+  margin-left: 15px;
+  padding: 0 0 7px 0;
+  border: 0; }
   #slider .cta.principal {
-    background-color: orangered;
-    margin-left: 20px;
+    border-bottom: 5px solid #222;
+    padding: 0 0 5px 0;
+    color: #222;
+    margin-left: 0; }
+  #slider .cta:hover {
+    background-color: black;
     color: white; }
 
 #about {
