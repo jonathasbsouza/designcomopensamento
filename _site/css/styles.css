@@ -1,8 +1,11 @@
 body {
   font-family: sans-serif; }
 
+h4, h5, h6 {
+  font-family: "IBM Plex Mono", monospace !important; }
+
 .cta {
-  font-family: 'IBM Plex Mono', monospace; }
+  font-family: "IBM Plex Mono", monospace; }
 
 header {
   padding: 15px 0px; }
@@ -13,9 +16,10 @@ header {
 
 nav a {
   font-size: 14px;
-  text-transform: uppercase; }
+  text-transform: lowercase; }
 nav .current {
-  color: red; }
+  color: red;
+  border-bottom: 1px solid red; }
 
 #vnav {
   padding: 20px; }
@@ -26,6 +30,8 @@ nav .current {
   margin-bottom: 15px;
   height: 60vh;
   background-color: #222; }
+#slider a:hover {
+  text-decoration: none; }
 #slider .cta {
   display: inline-block;
   color: #585858;
@@ -42,7 +48,7 @@ nav .current {
     color: #222;
     margin-left: 0; }
   #slider .cta:hover {
-    background-color: black;
+    background-color: #222;
     color: white; }
 
 #about {
@@ -52,3 +58,36 @@ nav .current {
   color: white;
   padding: 50px 0;
   background-color: #222; }
+  #pensadores .decada {
+    margin-bottom: 15px; }
+  #pensadores a {
+    color: #64c8ff; }
+  #pensadores .autorthumb {
+    margin-bottom: 16px; }
+    #pensadores .autorthumb img {
+      width: 100%;
+      margin-bottom: 4px; }
+
+.author #title {
+  margin-top: 10vh; }
+.author .referencias {
+  list-style: none;
+  padding: 0; }
+  .author .referencias li {
+    font-size: 0.7em;
+    margin-bottom: 5px; }
+
+.infografico a {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8em;
+  padding: 10px !important;
+  display: block;
+  color: #222; }
+  .infografico a:hover {
+    color: white;
+    background-color: #222; }
+.infografico .thumb {
+  width: 100%;
+  margin-bottom: 8px; }
+.infografico .autores {
+  font-weight: 700; }

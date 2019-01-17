@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+{% include head.html %}
+
+<body class="author">
+    {% include navigation.html %}
+    <section id="title">
+        <div class="container">
+            <h1>{{ page.title }}</h1>
+        </div>
+    </section>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h5>Biografia</h5>
+            {{ content }}
+            <h5>Referências</h5>
+            <ul class="referencias">
+                    {% assign referencias = site.data.referencias[page.short_name] %}
+                    {% for item in referencias %}
+                    <li>
+                        {{item.referencia}} 
+                        {% if item.link %}<a href="{{ item.link }}">baixar</a>{% endif %}
+                    </li>
+                    {%endfor%}
+            </ul>
+            
+            
+        </div>
+        <div class="col-md-8">
+                <h5>Infográficos</h5>
+                {% assign infografico = site.data.infograficos[page.short_name] %}
+    
+                <div class="row">
+                    {% for item in infografico %}
+                    <div class="col-md-4 infografico">
+                        <a class="" href="/assets/files/infograficos/{{ item.link }}">
+                            <img class="thumb" src="/assets/images/infograficos/{{ item.thumb }}" alt="Infográfico sobre {{ page.title }}"
+                                srcset="">
+                            <span class="autores">{{ item.autores | join: ", "}}</span><br>
+                            <span>{{ item.semestre }}</span><br>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+        </div>
+    </div>
+    
+    </div>
+    <ul>
+
+    </ul>
+    </a>
+</body>
+
+</html>

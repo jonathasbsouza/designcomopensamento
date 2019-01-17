@@ -1,72 +1,64 @@
 ---
-layout: home
+layout: default
 title: Design como Pensamento | Home
 ---
 
 
 <section id="slider">
-<div class="container">
-    <div class="slider">
+    <div class="container">
+        <div class="slider">
             Teste
-    </div>
-    <button class="cta principal">
-    <span>ver os infográficos</span>
-    <span class="seta"></span>  
-    </button>
-    <button class="cta">
-    <span>ver os infográficos</span>    
-    </button>
+        </div>
+        <a href="#">
+            <button class="cta principal">
+                <span>ver os infográficos</span>
+                <span class="seta"></span>
+            </button>
+        </a>
+        <button class="cta">
+            <span>ver os infográficos</span>
+        </button>
 
-</div>
+    </div>
 </section>
 <section id="about">
-        <div class="container">
-            <div>
-                Sobre o projeto
-            </div>
+    <div class="container">
+        <div>
+            Sobre o projeto
         </div>
+    </div>
 </section>
 <section id="pensadores">
     <div class="container">
         <div class="row">
-            <div class="col-md-2"><h3>pensadores</h3></div>
+            <div class="col-md-2">
+                <h3>pensadores</h3>
+            </div>
             <div class="col-md-10">
-                <div class="row">
-                    <div class="col-md-1">1960</div>
+                {% assign groups = site.authors | group_by: "decade" | sort: "short_name" %}
+                {% for group in groups %}
+                <div class="row decada">
+                    <div class="col-md-1">{{ group.name }}</div>
                     <div class="col-md-11">
-                        
+                        <div class="row">
+                            {% for item in group.items %}
+                            <div class="col-2 autorthumb">
+                                <a href="{{ item.url }}">
+                                    <img 
+                                    srcset="/assets/images/thumbs/{{item.short_name }}.jpg,
+                                    /assets/images/thumbs/{{item.short_name }}@1.5x.jpg 1.5x,
+                                    /assets/images/thumbs/{{item.short_name }}@2x.jpg 2x"
+                                    alt="{{ item.title  }}"
+                                    src="/assets/images/thumbs/{{item.short_name }}.jpg">
+                                    <h6>{{ item.title }}</h6>
+                                </a>
+                            </div>
+                            {%endfor%}
+                        </div>
+
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-1">1970</div>
-                    <div class="col-md-11">
-                        
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-1">1980</div>
-                    <div class="col-md-11">
-                        
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-1">1990</div>
-                    <div class="col-md-11">
-                        
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-1">2000</div>
-                    <div class="col-md-11">
-                        
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-1">2010</div>
-                    <div class="col-md-11">
-                        
-                    </div>
-                </div>
+                {%endfor%}
             </div>
         </div>
     </div>
